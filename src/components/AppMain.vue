@@ -1,10 +1,11 @@
 <script>
 import AppCard from './AppCard.vue';
 
-export default {
-    components: { AppCard }
-}
 
+export default {
+    components: { AppCard },
+
+}
 </script>
 
 <template>
