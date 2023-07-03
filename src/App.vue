@@ -8,7 +8,7 @@ export default {
   name: 'Pokévuex',
   components: { AppMain },
 
-  created() {
+  mounted() {
     axios.get(endpoint)
       .then(res => {
         store.isLoading = true;

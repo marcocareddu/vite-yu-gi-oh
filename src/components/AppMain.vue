@@ -3,7 +3,6 @@ import { store } from '../assets/data/store'
 import AppCard from './AppCard.vue';
 import AppLoader from './AppLoader.vue';
 
-
 export default {
     components: { AppCard, AppLoader },
     data() {
@@ -13,9 +12,9 @@ export default {
 </script>
 
 <template>
+    <!-- Display Overlay -->
     <AppLoader />
     <main class="container">
-
 
         <!-- Header -->
         <header class="text-center">
