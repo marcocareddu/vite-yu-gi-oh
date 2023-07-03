@@ -1,15 +1,21 @@
 <script>
+import { store } from '../assets/data/store'
 import AppCard from './AppCard.vue';
+import AppLoader from './AppLoader.vue';
 
 
 export default {
-    components: { AppCard },
-
+    components: { AppCard, AppLoader },
+    data() {
+        return { store }
+    }
 }
 </script>
 
 <template>
+    <AppLoader v-if="store.isLoadiung" />
     <main class="container">
+
 
         <!-- Header -->
         <header class="text-center">
@@ -21,7 +27,6 @@ export default {
             <div class="card-container rounded-3 h-100 w-100 row">
 
                 <!-- AppCard / Col -->
-                <!-- !TO INJECT -->
                 <AppCard />
             </div>
         </section>
