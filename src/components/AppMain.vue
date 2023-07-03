@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-    <AppLoader v-if="store.isLoadiung" />
+    <AppLoader />
     <main class="container">
 
 

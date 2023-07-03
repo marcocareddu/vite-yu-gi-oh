@@ -11,12 +11,12 @@ export default {
   created() {
     axios.get(endpoint)
       .then(res => {
-        store.isLoadiung = true;
+        store.isLoading = true;
         store.pokemon = res.data.docs;
       }).catch(err => {
         console.err(err.message);
       }).then(() => {
-        store.isLoadiung = false;
+        store.isLoading = false;
       })
   },
 
