@@ -5,7 +5,10 @@ export default {
 };
 </script>
 
-<template></template>
+<template>
+  <main class="container">
+  </main>
+</template>
 
 <style lang="scss">
 @use './assets/scss/style.scss';
