@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-    <div v-for="pokemon in  store.pokemon " class="col col-3 g-3 ">
+    <div v-for="pokemon in  store.pokemon" :key="pokemon.id" class="col col-3 g-3 ">
 
         <!-- Active change class -->
         <div class="card rounded-5" :class="pokemon.type1.toLowerCase()">
@@ -25,12 +25,14 @@ export default {
 </template>
 
 <style scoped>
+/* Images */
 img {
     height: 200px;
     max-width: 200px;
     object-fit: cover;
 }
 
+/* Card-type class */
 .grass {
     background-color: darkseagreen;
 }
