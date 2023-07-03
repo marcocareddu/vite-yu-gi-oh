@@ -1,0 +1,27 @@
+// CSS RESET 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Body
+body {
+    height: 100vh;
+}
+
+// * Main
+// Header
+header {
+    height: 80px;
+}
+
+.card-box {
+    background-color: lightblue;
+    height: 700px;
+}
+
+.card-container {
+    background-color: lightgray;
+    overflow-y: auto;
+}
