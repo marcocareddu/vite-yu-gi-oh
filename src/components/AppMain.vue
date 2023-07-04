@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 import { store } from '../assets/data/store'
 import AppCard from './AppCard.vue';
 import AppLoader from './AppLoader.vue';
@@ -9,20 +10,31 @@ export default {
     data() {
         return {
             store,
-            species: ["Bug", "Dark", "Dragon", "Electric", "Fairy", "Fighting", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water"],
             selectedElement: '',
+            selectedString: '',
+            endpoint: 'https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons',
         }
     },
-    // computed: {
-    //     updateSpecies() {
-
-    //     }
-    // },
-    methods: {
-        onStringToSearch() {
-            console.log(this.selectedElement)
+    computed: {
+        reloadLink() {
+            return `${this.endpoint}?q[name]=${this.selectedString}&eq[type1]=${this.selectedElement}`
         },
-    }
+
+        fetchPokemon() {
+            axios.get(this.reloadLink)
+                .then(res => {
+                    store.isLoading = true;
+                    store.pokemon = res.data.docs;
+                }).catch(err => {
+                    console.err(err.message);
+                }).then(() => {
+                    store.isLoading = false;
+                })
+        }
+    },
+    methods: {
+    },
+
 }
 </script>
 
@@ -37,8 +49,8 @@ export default {
         </header>
 
         <!-- App Filter -->
-        <AppFilter :type-To-Search="species" @string-to-search="onStringToSearch" @element-to-search=""
-            @form-submit="searchTerm" />
+        <AppFilter :type-To-Search="this.store.species" @string-to-search="selectedString = $event"
+            @element-to-search="selectedElement = $event" @form-submit="searchFilter" />
 
         <!-- Section -->
         <section class="card-box rounded-3 d-flex justify-content-center align-items-center p-5">
