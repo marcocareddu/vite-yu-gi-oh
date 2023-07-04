@@ -25,6 +25,9 @@ export default {
             <h1>PokéVuex</h1>
         </header>
 
+        <!-- App Filter -->
+        <AppFilter :type-To-Search="species" />
+
         <!-- Section -->
         <section class="card-box rounded-3 d-flex justify-content-center align-items-center p-5">
             <div class="card-container rounded-3 h-100 w-100 row">
