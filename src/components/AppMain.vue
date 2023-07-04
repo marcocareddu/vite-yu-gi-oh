@@ -6,7 +6,10 @@ import AppLoader from './AppLoader.vue';
 export default {
     components: { AppCard, AppLoader },
     data() {
-        return { store }
+        return {
+            store,
+            species: ["Bug", "Dark", "Dragon", "Electric", "Fairy", "Fighting", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water"],
+        }
     }
 }
 </script>
