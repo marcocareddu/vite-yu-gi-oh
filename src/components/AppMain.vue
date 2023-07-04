@@ -32,9 +32,6 @@ export default {
                 })
         }
     },
-    methods: {
-    },
-
 }
 </script>
 
@@ -50,7 +47,7 @@ export default {
 
         <!-- App Filter -->
         <AppFilter :type-To-Search="this.store.species" @string-to-search="selectedString = $event"
-            @element-to-search="selectedElement = $event" @form-submit="searchFilter" />
+            @element-to-search="selectedElement = $event" @form-submit="fetchPokemon" />
 
         <!-- Section -->
         <section class="card-box rounded-3 d-flex justify-content-center align-items-center p-5">
