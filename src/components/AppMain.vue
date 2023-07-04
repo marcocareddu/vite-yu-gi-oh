@@ -10,7 +10,18 @@ export default {
         return {
             store,
             species: ["Bug", "Dark", "Dragon", "Electric", "Fairy", "Fighting", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Steel", "Water"],
+            selectedElement: '',
         }
+    },
+    // computed: {
+    //     updateSpecies() {
+
+    //     }
+    // },
+    methods: {
+        onStringToSearch() {
+            console.log(this.selectedElement)
+        },
     }
 }
 </script>
@@ -26,7 +37,8 @@ export default {
         </header>
 
         <!-- App Filter -->
-        <AppFilter :type-To-Search="species" />
+        <AppFilter :type-To-Search="species" @string-to-search="onStringToSearch" @element-to-search=""
+            @form-submit="searchTerm" />
 
         <!-- Section -->
         <section class="card-box rounded-3 d-flex justify-content-center align-items-center p-5">
