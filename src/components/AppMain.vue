@@ -2,9 +2,10 @@
 import { store } from '../assets/data/store'
 import AppCard from './AppCard.vue';
 import AppLoader from './AppLoader.vue';
+import AppFilter from './AppFilter.vue'
 
 export default {
-    components: { AppCard, AppLoader },
+    components: { AppCard, AppLoader, AppFilter },
     data() {
         return {
             store,
